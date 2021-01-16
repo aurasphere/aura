@@ -1,0 +1,2 @@
+# aura
+Modular personal assistant
