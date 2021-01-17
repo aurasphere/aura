@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration debug="true">
+
+	<!-- <property name="LOG_HOME" value="/var/share/aura" /> -->
+	<property name="LOG_HOME" value="${OPENSHIFT_LOG_DIR}/aura" />
+
+	<!-- Daily rolling file appender -->
+	<appender name="log-default"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/aura-default.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/aura-default.log.%d{yyyy-MM-dd,
+				Europe/Rome}</FileNamePattern>
+			<!-- Keep 5 days of history -->
+			<maxHistory>5</maxHistory>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{HH:mm:ss.SSS, Europe/Rome} %-5level [%thread][%logger{0}]
+				%m%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="log-error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/aura-error.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/aura-error.log.%d{yyyy-MM-dd,
+				Europe/Rome}</FileNamePattern>
+			<!-- Keep 5 days of history -->
+			<maxHistory>5</maxHistory>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{HH:mm:ss.SSS, Europe/Rome} %-5level [%thread][%logger{0}]
+				%m%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="log-rest"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_HOME}/aura-rest.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${LOG_HOME}/aura-rest.log.%d{yyyy-MM-dd,
+				Europe/Rome}</FileNamePattern>
+			<!-- Keep 5 days of history -->
+			<maxHistory>5</maxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{HH:mm:ss.SSS, Europe/Rome} %-5level [%thread][%logger{0}]
+				%m%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="log-web" class="ch.qos.logback.core.FileAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="ch.qos.logback.classic.html.HTMLLayout">
+				<pattern>%relative%thread%mdc%level%logger%msg</pattern>
+			</layout>
+		</encoder>
+		<file>${LOG_HOME}/aura-web.log</file>
+	</appender>
+
+	<!-- Console appender -->
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%d{HH:mm:ss.SSS, Europe/Rome} %-5level [%thread][%logger{0}]
+				%m%n
+			</Pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+	</appender>
+
+	<!-- Loggers -->
+
+	<logger name="aura-default" level="INFO">
+		<appender-ref ref="log-default" />
+	</logger>
+
+	<logger name="aura-error" level="ERROR">
+		<appender-ref ref="log-error" />
+	</logger>
+
+	<logger name="aura-rest" level="DEBUG">
+		<appender-ref ref="log-rest" />
+	</logger>
+
+	<logger name="aura-web" level="INFO">
+		<appender-ref ref="log-web" />
+	</logger>
+
+	<logger name="org.hibernate.type" level="ALL">
+		<appender-fer ref="consoleAppender" />
+	</logger>
+	<logger name="org.hibernate" level="DEBUG">
+		<appender-fer ref="consoleAppender" />
+	</logger>
+
+	<root>
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="log-default" />
+		<appender-ref ref="log-error" />
+		<appender-ref ref="log-web" />
+	</root>
+
+</configuration>

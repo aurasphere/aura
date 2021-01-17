@@ -1,0 +1,12 @@
+.settings
+
+
+.classpath
+.project
+
+*/target
+*.class
+*/bin
+*.svn/
+*.log
+*.log.*
