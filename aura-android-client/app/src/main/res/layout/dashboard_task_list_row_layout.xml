@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dashboard_task_list_row_layout_task_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/aura_medium_font_size"
+                android:textStyle="bold" />
+
+            <!-- Task watch button -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/dashboard_task_list_row_layout_watch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/watch"
+                    android:background="@color/no_background"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dashboard_task_list_row_layout_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/aura_small_font_size" />
+
+        <!-- Last row with deadline and buttons -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingTop="20dp">
+
+            <!-- Deadline -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deadline: "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/aura_small_font_size" />
+
+                <TextView
+                    android:id="@+id/dashboard_task_list_row_layout_deadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/aura_small_font_size" />
+
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/dashboard_task_list_row_layout_postpone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/no_background"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_done_black" />
+
+                <!--<ImageButton-->
+                    <!--android:id="@+id/dashboard_task_list_row_layout_done"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@color/no_background"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:src="@mipmap/tick" />-->
+
+            </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView_social"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:isScrollContainer="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/social_form_image_text_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/content_label"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="@dimen/aura_medium_font_size" />
+
+                <EditText
+                    android:id="@+id/social_form_image_text_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="textMultiLine|textCapSentences" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/social_form_page_select_label"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/page_label"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="@dimen/aura_medium_font_size" />
+
+                <RadioGroup
+                    android:id="@+id/social_form_page_radio_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:minHeight="100dp">
+
+                    <RadioButton
+                        android:id="@+id/social_form_radio_lesdissia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/lesdissia_name" />
+
+                    <RadioButton
+                        android:id="@+id/nd1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:text="@string/nd" />
+
+                    <RadioButton
+                        android:id="@+id/nd2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:text="@string/nd" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/social_form_page_comment_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/social_page_comment_label"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="@dimen/aura_medium_font_size" />
+
+                <EditText
+                    android:id="@+id/social_form_edit_text_page_comment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="textMultiLine|textCapSentences" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/social_form_share_check_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/share_label"
+                android:textSize="@dimen/aura_medium_font_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/social_form_share_comment_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/social_share_comment_label"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="@dimen/aura_medium_font_size" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/social_form_share_comment_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:completionThreshold="1"
+                    android:inputType="textMultiLine|textCapSentences" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/social_form_preview_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/preview_button"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/social_form_refresh_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_selector"
+            android:text="@string/preview_button"
+            android:textColor="@drawable/button_text_selector" />
+
+        <Button
+            android:id="@+id/social_form_post_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_selector"
+            android:text="@string/post_button"
+            android:textColor="@drawable/button_text_selector" />
+
+    </LinearLayout>
+</LinearLayout>
+
+
+
+

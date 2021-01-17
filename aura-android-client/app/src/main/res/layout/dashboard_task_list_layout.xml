@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard_watch_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <co.aurasphere.aura.nebula.modules.dashboard.view.util.FixedSwipeRefreshLayout
+        android:id="@+id/dashboard_watch_list_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <co.aurasphere.aura.nebula.modules.dashboard.view.util.RecyclerViewEmptySupport
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dashboard_watch_list_recycler_view"/>
+
+    </co.aurasphere.aura.nebula.modules.dashboard.view.util.FixedSwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/dashboard_empty_task_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_task_available" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/dashboard_watch_list_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:color="@color/colorAccent"
+        android:src="@mipmap/ic_add_white"
+        app:layout_anchor="@id/dashboard_watch_list_layout"
+        app:layout_anchorGravity="bottom|right|end"
+        app:layout_behavior="co.aurasphere.aura.nebula.modules.dashboard.view.util.ScrollAwareFloatingActionButton"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

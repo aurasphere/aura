@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@mipmap/ic_dashboard_black"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_social"
+            android:icon="@mipmap/ic_publish_black"
+            android:title="Publisher"/>
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="N.D."
+            android:enabled="false"/>
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="N.D."
+            android:enabled="false"/>
+    </group>
+
+    <item android:title="Coming Soon">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="N.D."
+                android:enabled="false"/>
+            <item
+                android:id="@+id/nav_monitor"
+                android:icon="@drawable/ic_menu_monitor"
+                android:title="Monitor" />
+        </menu>
+    </item>
+
+</menu>

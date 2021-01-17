@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- Type Spinner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Type: "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/aura_medium_font_size" />
+
+            <Spinner
+                android:id="@+id/dashboard_add_task_form_type_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <!-- Title edit text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Title: "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/aura_medium_font_size" />
+
+            <EditText
+                android:id="@+id/dashboard_add_task_form_title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapSentences" />
+        </LinearLayout>
+
+        <!-- Description edit text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Description: "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/aura_medium_font_size" />
+
+            <EditText
+                android:id="@+id/dashboard_add_task_form_description_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine" />
+        </LinearLayout>
+
+        <!-- Deadline -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Deadline: "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/aura_medium_font_size" />
+
+            <EditText
+                android:id="@+id/dashboard_add_task_form_deadline_edit_text"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:inputType="date" />
+        </LinearLayout>
+
+        <!-- Priority Spinner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Priority: "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/aura_medium_font_size" />
+
+            <Spinner
+                android:id="@+id/dashboard_add_task_form_priority_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <!-- Project layout -->
+        <LinearLayout
+            android:id="@+id/dashboard_add_task_form_project_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Project category spinner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Category: "
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="@dimen/aura_medium_font_size" />
+
+                <Spinner
+                    android:id="@+id/dashboard_add_task_form_project_category_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--
+
+                    <Button
+                        android:id="@+id/dashboard_add_task_form_undo_button"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:background="@drawable/buttons_selector"
+                        android:text="@string/undo_button"
+                        android:textColor="@drawable/button_text_selector" />
+        -->
+
+    </LinearLayout>
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dashboard_add_task_form_create_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/buttons_selector"
+            android:text="@string/create_button"
+            android:textColor="@drawable/button_text_selector" />
+    </LinearLayout>
+</LinearLayout>
